@@ -12,6 +12,7 @@ import {
   Label,
   Button,
 } from "reactstrap";
+import { toast } from "react-toastify"
 
 import { Link, useNavigate } from "react-router-dom";
 import { AiFillFacebook } from "react-icons/ai";
@@ -69,7 +70,9 @@ const Login = (props) => {
         navigate("/dashboard", {
           replace: true,
         });
+        toast.success("Login Successfully")
       } else {
+        toast.warning("User is not registered. Please register.")
         navigate("/register", {
           replace: true,
           state: {

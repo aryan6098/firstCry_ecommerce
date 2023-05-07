@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {  useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import Navbar from "../Dashboard/Navbar";
 import {
@@ -12,6 +12,8 @@ import {
   Label,
   Row,
 } from "reactstrap";
+import { toast } from "react-toastify";
+
 import { useDispatch } from "react-redux";
 import { boutiqueList } from "../Dashboard/Premium/config";
 import { BsFacebook } from "react-icons/bs";
@@ -45,13 +47,13 @@ const ProductPage = () => {
       img: data.img,
     };
     dispatch(addToCart(payload));
+    toast.success("Product is Added to Cart");
   };
 
   const handleRemoveFromCart = () => {
     dispatch(removeFromCart());
+    toast.success("product is Remove");
   };
-
-
 
   return (
     <>

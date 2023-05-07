@@ -1,23 +1,11 @@
 {
   "users": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
-      "fullName": "Aryan Raj",
-      "mobile": "+918264984525",
-      "email": "araj32803@gmail.com",
-      "password": "rtyuuyyygiu",
-      "id": 2
-    },
-    {
-      "fullName": "Aryan Raj",
-      "mobile": "8264984525",
-      "email": "araj60988@gmail.com",
-      "password": "Raj@6098",
-      "id": 3
+      "fullName": "Aryan",
+      "mobile": "8200000001",
+      "email": "araj60@gmail.com",
+      "password": "Aryan@1236",
+      "id": 1
     }
   ]
 }

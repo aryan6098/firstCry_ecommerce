@@ -12,7 +12,9 @@ import {
   Label,
   Button,
   Alert,
+  Toast,
 } from "reactstrap";
+import { toast } from "react-toastify"
 
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -30,15 +32,16 @@ const RegisterSchema = Yup.object().shape({
   fullName: Yup.string().required("Full name is required"),
   mobile: Yup.string().matches(/^\d{10}$/, "Invalid mobile number"),
   email: Yup.string().email("Invalid email"),
-  password: Yup.string().required("Password is required"),
+  password: Yup.string()
+    .required("Password is required")
+    .min(8, "Please enter a valid Password"),
 });
 
 const Register = () => {
-  //meta title
   const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
   const navigate = useNavigate();
   const history = useLocation();
-  const emailOrPhone = history?.state?.emailOrPhone
+  const emailOrPhone = history?.state?.emailOrPhone;
   const validation = useFormik({
     initialValues: {
       fullName: "",
@@ -61,10 +64,10 @@ const Register = () => {
         if (!response.ok) {
           throw new Error("Failed to register");
         }
+        toast.success("Register Successfully")
         navigate("/", { replace: true });
-        // Do something when the form is submitted successfully
       } catch (error) {
-        console.error(error);
+        toast.error(error?.message)
       }
     },
   });
@@ -99,15 +102,18 @@ const Register = () => {
                         </Link>
                         Register
                       </p>
-                     {emailOrPhone && <Alert color="secondary">
-                        <p
-                          className=" p-0 m-0 text-danger "
-                          style={{ fontSize: "12px", lineHeight: "17px" }}
-                        >
-                          Kindly fill & submit the below information to create
-                          your FirstCry account with <span className="text-primary">{emailOrPhone}</span>
-                        </p>
-                      </Alert>}
+                      {emailOrPhone && (
+                        <Alert color="secondary">
+                          <p
+                            className=" p-0 m-0 text-danger "
+                            style={{ fontSize: "12px", lineHeight: "17px" }}
+                          >
+                            Kindly fill & submit the below information to create
+                            your FirstCry account with{" "}
+                            <span className="text-primary">{emailOrPhone}</span>
+                          </p>
+                        </Alert>
+                      )}
 
                       <div className="mt-2">
                         <Label className="small">Full Name</Label>
@@ -186,13 +192,18 @@ const Register = () => {
                             onChange={validation.handleChange}
                             onBlur={validation.handleBlur}
                             value={validation.values.password}
+                            invalid={
+                              validation.touched.password &&
+                              !!validation.errors.password
+                            }
                           />
 
                           <i
                             className="position-absolute top-50 end-0 translate-middle-y"
                             onClick={() => setShowPassword(!showPassword)}
                           >
-                            {showPassword ? <FaEyeSlash /> : <FaEye />}
+                            {!validation.errors.password &&
+                              (showPassword ? <FaEyeSlash /> : <FaEye />)}
                           </i>
 
                           {validation.touched.password && (
