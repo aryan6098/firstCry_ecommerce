@@ -1,38 +1,91 @@
-.App {
+.FcGoogle:hover {
+  background-color: transparent !important;
+  color: inherit !important;
+  border-color: inherit !important;
+}
+
+.link-no-underline {
+  text-decoration: none;
+}
+
+.fs {
+  font-size: 11px;
+}
+.layout-background {
+  background-color: #eeeeee;
+}
+.container {
+  margin-left: "150px";
+  margin-right: "150px";
+}
+.logout-icon {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+button.boutiqueButton,button.boutiqueButton:hover {
+  cursor: pointer;
+  background-color: #000000cc;
+  color: #f2a653;
   text-align: center;
+  z-index: 1;
+}
+.card-hover {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card-hover:hover {
+  transform: scale(1.005);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+}
+.cardShadow:hover {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ul.horizontal-list {
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  float: left;
+  margin: 0;
+
 }
 
-.App-link {
-  color: #61dafb;
+.horizontal-list li {
+  border: 1px solid #2d2d2d;
+  padding: 5px;
+  cursor: pointer;
+ 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.horizontal-list> li:first-child {
+  border-left: none;
 }
+
+.productHorizontal-list {
+  list-style: none;
+  display: flex;
+  float: left;
+  margin: 0;
+  padding: 0;
+  
+}
+.productHorizontal-list li {
+  border: 1px solid #2d2d2d;
+  border-radius: 5px;
+  padding: 3px;
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+.rounded-square {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+/* .bg-primary {
+  background-color: #007bff;
+} */
