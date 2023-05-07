@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -10,21 +10,17 @@ import {
   DropdownMenu,
   DropdownItem,
   InputGroup,
-  //   InputGroupAddon,
-  InputGroupText,
   Input,
   Button,
 } from "reactstrap";
 import { useSelector } from "react-redux";
-import { FaSearch, FaShoppingCart, FaUser, FaSignOutAlt } from "react-icons/fa";
+import { FaSearch, FaShoppingCart, FaSignOutAlt } from "react-icons/fa";
 import profile from "../../assets/fc_logo.png";
 import { useNavigate } from "react-router-dom";
 const Example = (props) => {
   const { totalQuantity } = useSelector((state) => state.cart);
   const navigate = useNavigate();
-  const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
   const logout = () => {
     localStorage.removeItem("isAuth");
     navigate("/");

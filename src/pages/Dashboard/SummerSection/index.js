@@ -27,21 +27,14 @@ import party1 from "../../../assets/party1.jpeg";
 import party2 from "../../../assets/party2.jpeg";
 import acces1 from "../../../assets/acces1.jpeg";
 import access2 from "../../../assets/access2.jpeg";
-import acess3 from "../../../assets/acess3.jpeg";
-import acess4 from "../../../assets/acess4.jpeg";
-import acess5 from "../../../assets/acess5.jpeg";
-import acess6 from "../../../assets/acess6.jpeg";
-import acess7 from "../../../assets/acess7.jpeg";
+// import acess3 from "../../../assets/acess3.jpeg";
+// import acess4 from "../../../assets/acess4.jpeg";
+// import acess5 from "../../../assets/acess5.jpeg";
+// import acess6 from "../../../assets/acess6.jpeg";
+// import acess7 from "../../../assets/acess7.jpeg";
 
 import { Card, Col, Row } from "reactstrap";
-// import brand9 from "../../../assets/brand9.jpeg";
-let accessoriesList = [
-  { img: acess3 },
-  { img: acess4 },
-  { img: acess5 },
-  { img: acess6 },
-  { img: acess7 },
-];
+
 let imageList = [
   { img: summer6 },
   { img: summer7 },

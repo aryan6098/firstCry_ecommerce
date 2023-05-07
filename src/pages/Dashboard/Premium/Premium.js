@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Row, Col, Card, CardBody, CardImg, Button } from "reactstrap";
-import img1 from "../../../assets/img1.jpeg";
 import { Link, useNavigate } from "react-router-dom";
-import { boutiquesData, boutiqueList } from "./config";
+import { boutiqueList } from "./config";
 import { AiFillCaretRight } from "react-icons/ai";
 
 const Premium = () => {

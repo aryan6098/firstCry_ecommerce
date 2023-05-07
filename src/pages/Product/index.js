@@ -20,7 +20,7 @@ import { BsFacebook } from "react-icons/bs";
 import { TiSocialGooglePlus } from "react-icons/ti";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { AiFillStar, AiOutlineRight } from "react-icons/ai";
-import { addToCart, removeFromCart } from "../../store/cartActions";
+import { addToCart } from "../../store/cartActions";
 import Footer from "../Footer";
 const ProductPage = () => {
   let { id } = useParams();
@@ -50,10 +50,10 @@ const ProductPage = () => {
     toast.success("Product is Added to Cart");
   };
 
-  const handleRemoveFromCart = () => {
-    dispatch(removeFromCart());
-    toast.success("product is Remove");
-  };
+  // const handleRemoveFromCart = () => {
+  //   dispatch(removeFromCart());
+  //   toast.success("product is Remove");
+  // };
 
   return (
     <>

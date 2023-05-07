@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "reactstrap";
-import Footer from "../../../Footer";
 
 const Layout = (props) => {
   const {  backgroundColor } = props;
