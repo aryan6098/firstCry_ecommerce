@@ -13,6 +13,7 @@ import {
   Input,
   Button,
 } from "reactstrap";
+import { toast } from "react-toastify"
 import { useSelector } from "react-redux";
 import { FaSearch, FaShoppingCart, FaSignOutAlt } from "react-icons/fa";
 import profile from "../../assets/fc_logo.png";
@@ -22,7 +23,9 @@ const Example = (props) => {
   const navigate = useNavigate();
 
   const logout = () => {
+
     localStorage.removeItem("isAuth");
+    toast.success("Logout Success")
     navigate("/");
   };
   return (
@@ -103,9 +106,8 @@ const Example = (props) => {
               </div>
             </NavLink>
           </NavItem>
-
           <NavItem>
-            <NavLink href="" onClick={logout}>
+            <NavLink style={{cursor:"pointer"}} onClick={logout}>
               <FaSignOutAlt className="logout-icon" />
             </NavLink>
           </NavItem>
